@@ -1,0 +1,91 @@
+---
+permalink: deploy/sizing-requirements.html 
+sidebar: sidebar 
+keywords: ONTAP tools,Storage Replication Adapter 
+summary: Bevor Sie ONTAP Tools für VMware vSphere implementieren, sollten Sie mit den Speicherplatzanforderungen für das Implementierungspaket und einigen grundlegenden Host-Systemanforderungen vertraut sein. 
+---
+= Voraussetzungen für die Bereitstellung von ONTAP-Tools für VMware vSphere
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Bevor Sie ONTAP Tools für VMware vSphere implementieren, sollten Sie mit den Speicherplatzanforderungen für das Implementierungspaket und einigen grundlegenden Host-Systemanforderungen vertraut sein.
+
+Sie können ONTAP-Tools für VMware vSphere mit der virtuellen VMware vCenter Server-Appliance (vCSA) verwenden. Sie sollten ONTAP-Tools für VMware vSphere auf einem unterstützten vSphere-Client mit ESXi-System implementieren.
+
+* *Platzanforderungen für Installationspaket pro Knoten*
++
+** 10 GB bei Thin Provisioning-Installationen
+** 248 GB für Thick Provisioning-Installationen
+
+
+* *Größenanforderungen für das Host-System pro Knoten* Empfohlener Speicher je nach Größe der Bereitstellung und pro Knoten ist wie in der folgenden Tabelle dargestellt:
+
+
+|===
+
+
+| *Art der Bereitstellung* | * CPUs* | *Speicher (GB)* 
+
+
+| Klein (S) | 8 | 16 
+
+
+| Mittel (M) | 12 | 24 
+
+
+| Groß (L) | 16 | 32 
+|===
+link:../deploy/config-limits.html["Konfigurationsbeschränkungen für die Implementierung von ONTAP Tools für VMware vSphere"]Weitere Informationen finden Sie unter.
+
+
+
+== Mindestanforderungen hinsichtlich Storage und Applikationen
+
+|===
+| Storage, Host und Applikationen | Mindestversionsanforderungen 
+
+
+| ONTAP | Neueste Patch-Version von ONTAP 9.12.1, 9.13.1 oder 9.14.1 
+
+
+| ESXi-Hosts | ESXi 7.0.3 
+
+
+| VCenter Server | VCenter 7.0U3 
+
+
+| VASA-Provider | 3,0 
+
+
+| OVA-Anwendung | 10,1 
+|===
+Das Interoperabilitäts-Matrix-Tool (IMT) enthält aktuelle Informationen zu den unterstützten Versionen von ONTAP, vCenter Server, ESXi-Hosts und Plug-in-Applikationen.
+
+https://imt.netapp.com/matrix/imt.jsp?components=105475;&solution=1777&isHWU&src=IMT["Interoperabilitäts-Matrix-Tool"^]
+
+
+
+== Weitere Implementierungsüberlegungen
+
+Sie sollten bei der Anpassung der Implementierung von ONTAP Tools einige Anforderungen berücksichtigen.
+
+
+
+=== Benutzerkennwort der Anwendung
+
+Dies ist das dem Administratorkonto zugewiesene Kennwort. Aus Sicherheitsgründen wird empfohlen, dass das Passwort acht bis dreißig Zeichen lang ist und mindestens ein oberes, ein unteres, eine Ziffer und ein Sonderzeichen enthält.
+
+
+
+=== Anmeldedaten für die Appliance-Wartungskonsole
+
+Sie sollten über den Benutzernamen „`maint`“ auf die Wartungskonsole zugreifen. Sie können das Passwort für den Benutzer „`maint`“ während der Bereitstellung festlegen. Sie können die Option Gastbetriebssystem neu starten verwenden, die während des VM-Neustarts in vCenter Server verfügbar ist, um das Passwort zu ändern.
+
+
+
+=== Netzwerkeigenschaften von Appliances
+
+Geben Sie einen gültigen (nicht qualifizierten) DNS-Hostnamen sowie die statische IP-Adresse für ONTAP-Tools für VMware vSphere und die anderen Netzwerkparameter an. Die angegebenen IP-Adressen sollten über das VLAN-Netzwerk zugänglich sein, das Sie während der Bereitstellung auswählen. DHCP wird für die ONTAP-Tools der VMware vSphere 10.1-Version nicht unterstützt. Alle diese Parameter sind für eine ordnungsgemäße Installation und Betrieb erforderlich.

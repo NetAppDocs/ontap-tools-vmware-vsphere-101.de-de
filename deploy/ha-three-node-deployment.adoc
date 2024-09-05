@@ -1,0 +1,133 @@
+---
+permalink: deploy/ha-three-node-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können HA s in kleinen, mittleren oder großen Konfigurationen konfigurieren. 
+---
+= Implementierung der HA-Konfiguration
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können HA für drei Nodes in kleinen, mittleren oder großen Konfigurationen konfigurieren. Für die HA-Implementierung werden die Servicedaten mithilfe von Trident gespeichert.
+
+* Kleine HA, drei Nodes, enthalten 8 CPUs und 16 GB RAM pro Node.
+* Mittlere HA, drei Nodes enthalten 12 CPUs und 24 GB RAM pro Node.
+* Große HA, drei Nodes enthalten 16 CPUs und 32 GB RAM pro Node.
+
+
+*Bevor Sie beginnen*
+
+Diese Aufgabe enthält Anweisungen zum Installieren von HA Three Nodes in kleinen, mittleren oder hohen Konfigurationen.
+
+
+NOTE: Das Erstellen der Content Library ist ein obligatorischer Schritt für die Bereitstellung der HA-Konfiguration mit drei Nodes. Weitere Informationen finden Sie unter link:../deploy/download-ontap-tools.html["ONTAP Tools herunterladen"] . Weitere Informationen https://blogs.vmware.com/vsphere/2020/01/creating-and-using-content-library.html["Erstellen und Verwenden der Inhaltsbibliothek"].
+
+Stellen Sie sicher, dass Sie Ihre OVA in Ihre Inhaltsbibliothek importiert haben. Halten Sie den Namen der Inhaltsbibliothek und den Namen des Bibliothekselements, den Sie für Ihr OVA-Element angegeben haben, griffbereit.
+
+
+NOTE: Bevor Sie mit der Bereitstellung fortfahren, setzen Sie den Distributed Resource Scheduler (DRS) des Clusters im Inventar während der Installation von ONTAP-Tools auf „konservativ“. Dadurch wird sichergestellt, dass VMs während der Installation nicht migriert werden.
+
+*Schritte*
+
+. So stellen Sie vom vSphere-Server bereit:
++
+.. Melden Sie sich beim vSphere-Server an.
+.. Navigieren Sie zum Ressourcenpool oder Host, auf dem Sie die OVA bereitstellen möchten, und klicken Sie mit der rechten Maustaste auf den gewünschten Speicherort, an dem die VM bereitgestellt werden soll, und wählen Sie *OVF-Vorlage bereitstellen...*
++
+
+NOTE: Stellen Sie keine ONTAP-Tools VMware vSphere Virtual Machine auf einem von ihm gemanagten VVols Datastore bereit.
+
+.. Sie können entweder die URL für die _.ova_-Datei eingeben oder in den Ordner navigieren, in dem die _.ova_-Datei gespeichert ist, und dann *Weiter* auswählen
+
+
+. So stellen Sie aus der Inhaltsbibliothek bereit:
++
+.. Öffnen Sie Ihre Inhaltsbibliothek, und klicken Sie auf das Bibliothekselement, das Sie bereitstellen möchten.
+.. Klicken Sie auf *actions* > *New VM from this Template*
+
+
+. Wählen Sie einen Namen und Ordner für die virtuelle Maschine aus und wählen Sie *Weiter*.
+. Wählen Sie den Host aus und wählen Sie *Weiter*
+. Überprüfen Sie die Zusammenfassung der Vorlage und wählen Sie *Weiter*.
+. Lesen und akzeptieren Sie die Lizenzvereinbarung und wählen Sie *Weiter*.
+. Wählen Sie im Fenster *Konfiguration* je nach Anforderung *Bereitstellung für hohe Verfügbarkeit*, *Bereitstellung für hohe Verfügbarkeit(M)* oder *Bereitstellung für hohe Verfügbarkeit(L)* aus.
+. Wählen Sie den Speicher für die Konfigurations- und Festplattendateien aus, und wählen Sie *Weiter*.
+. Wählen Sie für jedes Quellnetzwerk das Zielnetzwerk aus, und wählen Sie *Weiter*.
+. Wählen Sie *Template anpassen* > *System Configuration*-Fenster.
++
+image:../media/ha-deployment-sys-config.png["Systemkonfiguration"]
+
++
+Geben Sie die folgenden Details ein:
+
++
+.. Anwendungsbenutzername und Kennwort: Dieser Benutzername und dieses Kennwort werden für die Registrierung von VASA-Provider und SRA im vCenter Server verwendet.
+.. Das Kontrollkästchen *Enable AutoSupport* ist standardmäßig aktiviert. AutoSupport kann nur während der Implementierung aktiviert oder deaktiviert werden.
+.. Geben Sie im Feld *ASUP Proxy URL* diese URL ein, um eine Blockierung der Firewall bei der Übertragung von AutoSupport-Daten zu vermeiden.
+.. Administratorbenutzername und Administratorkennwort: Dies ist das Passwort, das zur Anmeldung beim ONTAP Tools Manager verwendet wird.
+.. Geben Sie Ihre NTP-Server-Informationen in das Feld *NTP-Server* ein.
+.. Maintenance User password: Dies wird verwendet, um Zugriff auf ‘IH Console Options’ zu gewähren.
+
+
+. Geben Sie im Fenster *Vorlage anpassen* > *Bereitstellungskonfiguration* die folgenden Details ein:
++
+image:../media/ha-deploy-config.png["Bereitstellungskonfiguration"]
+
++
+.. Geben Sie eine verfügbare IP-Adresse in der virtuellen IP-Adresse für die Kubernetes-Kontrollebene ein. Sie benötigen dies für den Kubernetes-API-Server.
+.. Wählen Sie in der erweiterten Bereitstellungsoption *Enable SVM Scoping* aus, wenn Sie das direkt hinzugefügte SVM-Benutzerkonto verwenden möchten. Aktivieren Sie das Kontrollkästchen nicht, wenn Sie ONTAP Cluster verwenden möchten.
++
+
+NOTE: Wenn der SVM-Bereich aktiviert ist, sollte die SVM-Unterstützung mit der Management-IP-Adresse bereits aktiviert sein.
+
+.. Wählen Sie entweder NFS oder iSCSI im Feld *Protokoll* aus.
+.. Geben Sie den ONTAP-Cluster oder die IP-Adresse des SVM-Managements in das Feld *ONTAP/SVM-Management-LIF* ein.
+.. Geben Sie den ONTAP Cluster oder die SVM ONTAP/SVM-Daten-LIF ein. Die Daten-LIF sollte zum ausgewählten Protokoll gehören. Wenn beispielsweise das iSCSI-Protokoll ausgewählt ist, sollte eine iSCSI-Daten-LIF angegeben werden.
+.. Bei Storage VM können Sie entweder die Standard-Storage-VM-Details Ihres ONTAP angeben oder eine neue Storage-VM erstellen. Geben Sie den Wert nicht in das Feld *Storage VM* ein, wenn die Option SVM-Scoping aktivieren ausgewählt ist, da dieses Feld ignoriert wird.
+.. Geben Sie den ONTAP/SVM-Benutzernamen ein. Der Benutzername und das Passwort für ONTAP/SVM sind erforderlich, damit Trident Volumes für die Speicherung der Services-Daten im Falle einer erweiterten Implementierung oder HA-Implementierung erstellt und die Daten bei einem Node-Ausfall von Volumes wiederhergestellt werden können.
+.. Geben Sie das ONTAP/SVM-Passwort ein.
+.. Die primäre VM ist standardmäßig aktiviert. Ändern Sie diese Auswahl nicht.
+
+
+. Geben Sie im Fenster *Vorlage anpassen* > *Inhaltsbibliothek Details* den Namen der *Inhaltsbibliothek* und den Namen der *OVF-Vorlage* ein.
+. Geben Sie im Fenster *Vorlage anpassen* > *vCenter-Konfiguration* die Details des vCenter-Servers an, auf dem die Inhaltsbibliothek gehostet wird.
+. Geben Sie im Fenster *Vorlage anpassen* > *Knotenkonfiguration* die Netzwerkeigenschaften der OVA für alle drei Knoten ein.
++
+
+NOTE: Die hier angegebenen Informationen werden während des Installationsprozesses auf korrekte Muster überprüft. Im Falle einer Abweichung wird eine Fehlermeldung auf der Webkonsole angezeigt, und Sie werden aufgefordert, falsche Informationen zu korrigieren.
+
++
+.. Geben Sie den Hostnamen ein. Hostnamen, die aus Groß- und Kleinbuchstaben (A-Z), Kleinbuchstaben (a-z), Ziffern (0-9) und dem Bindestrich (-) bestehen, werden nur unterstützt. Wenn Sie Dual-Stack konfigurieren möchten, geben Sie den Hostnamen an, der der IPv6-Adresse zugeordnet ist.
+.. Geben Sie die dem Hostnamen zugeordnete IP-Adresse (IPV4) ein. Geben Sie im Fall eines Dual-Stacks alle verfügbaren IPv4-IP-Adressen an, die sich im gleichen VLAN wie die IPv6-Adresse befinden.
+.. Geben Sie die IPV6-Adresse im bereitgestellten Netzwerk nur ein, wenn Sie Dual Stack benötigen.
+.. Geben Sie nur die Präfixlänge für IPV6 an.
+.. Geben Sie im Feld Netzmaske (nur für IPV4) das Subnetz an, das im bereitgestellten Netzwerk verwendet werden soll.
+.. Geben Sie das Gateway im bereitgestellten Netzwerk an.
+.. Geben Sie die IP-Adresse des primären DNS-Servers an.
+.. Geben Sie die IP-Adresse des sekundären DNS-Servers an.
+.. Geben Sie den Suchdomänennamen an, der beim Auflösen des Hostnamens verwendet werden soll.
+.. Geben Sie das IPV6-Gateway im bereitgestellten Netzwerk nur an, wenn Sie Dual-Stack benötigen.
+
+
+. Geben Sie im Fenster *Template anpassen* > *Node 2 Configuration* und *Node 3 Configuration* die folgenden Details ein:
++
+.. Hostname 2 und 3: Hostnamen, die aus Groß- und Kleinbuchstaben (A-Z), Kleinbuchstaben (a-z), Ziffern (0-9) und dem Bindestrich (-) bestehen, werden nur unterstützt. Wenn Sie Dual-Stack konfigurieren möchten, geben Sie den Hostnamen an, der der IPv6-Adresse zugeordnet ist.
+.. IP-Adresse
+.. IPV6-Adresse
+
+
+. Überprüfen Sie die Details im Fenster *Ready to Complete*, wählen Sie *Finish*.
++
+Wenn die Bereitstellungsaufgabe erstellt wird, wird der Fortschritt in der vSphere-Taskleiste angezeigt.
+
+. Schalten Sie die VM nach Abschluss der Aufgabe ein.
++
+Die Installation beginnt. Sie können den Installationsfortschritt in der Web-Konsole der VM verfolgen. Im Rahmen der Installation werden Node-Konfigurationen validiert. Die Eingaben, die unter verschiedenen Abschnitten unter der Vorlage „Anpassen“ im OVF-Formular bereitgestellt werden, werden validiert. Bei Unstimmigkeiten werden Sie in einem Dialogfeld aufgefordert, Korrekturmaßnahmen zu ergreifen.
+
+. Nehmen Sie die erforderlichen Änderungen in der Dialogaufforderung vor. Verwenden Sie die Tabulatortaste, um über das Bedienfeld zu navigieren, um Ihre Werte einzugeben, *OK* oder *Abbrechen*.
+. Bei Auswahl von *OK* werden die angegebenen Werte erneut validiert. Mit den ONTAP-Tools für VMware können Sie drei Versuche durchführen, ungültige Werte zu korrigieren. Wenn Sie Probleme nach drei Versuchen nicht beheben können, wird die Produktinstallation angehalten, und Sie werden aufgefordert, die Installation auf einer neuen VM zu versuchen.
+. Nach der erfolgreichen Installation zeigt die Webkonsole den Status der ONTAP Tools für VMware vSphere an.
+

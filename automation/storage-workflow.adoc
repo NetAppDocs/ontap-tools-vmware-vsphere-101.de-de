@@ -1,0 +1,42 @@
+---
+permalink: automation/storage-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Ein Workflow ist eine Sequenz aus einem oder mehreren Schritten, die zur Ausführung einer bestimmten administrativen Aufgabe oder eines bestimmten Ziels erforderlich sind. 
+---
+= Speichererkennung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Das Erkennungsintervall kann als Teil der Konfigurationskarte konfiguriert werden. Die geplante Erkennung läuft alle 60 Minuten. Die hier angegebene API dient zum Ausführen der Ermittlung nach Bedarf für ein bestimmtes Speicher-Back-End, das dem lokalen Umfang hinzugefügt wird.
+
+Verwenden Sie die folgende API, um die Erkennung auszuführen:
+
+[listing]
+----
+POST
+/virtualization/api/v1/vcenters/{vcguid}/storage-backends/{id}/discovery-jobs
+----
+
+NOTE: Erfahren Sie im integrierten Storage-Backend-Workflow (SVM oder Cluster) und erhalten Sie ID aus der Antwort der Post-Storage-Back-End-API.
+
+Die Erkennung über diesen API-Endpunkt wird nur für Storage-Back-Ends mit lokalem Umfang und nicht für Storage-Back-Ends mit globalem Umfang unterstützt. Wenn der Speicher-Backend-Typ Cluster ist, wird die Ermittlung implizit für die untergeordneten SVMs ausgeführt. Wenn der Storage-Back-End-Typ SVM ist, wird die Erkennung nur für die ausgewählte SVM ausgeführt.
+
+Beispiel:
+
+So führen Sie die Ermittlung auf einem durch ID angegebenen Speicher-Back-End aus
+
+[listing]
+----
+POST
+/api/v1/vcenters/3fa85f64-5717-4562-b3fc-2c963f66afa6/storage-backends/74e85f64-5717-4562-b3fc-2c963f669dde/discovery-jobs
+----
+Sie müssen x-auth für die API übergeben. Sie können diese X-Auth aus der neuen API generieren, die unter Auth in Swagger hinzugefügt wurde.
+
+[listing]
+----
+/virtualization/api/v1/auth/vcenter-login
+----

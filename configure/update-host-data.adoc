@@ -1,0 +1,21 @@
+---
+permalink: configure/update-host-data.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können eine On-Demand-Erkennung auf dem ESXi-Host ausführen, um die neuesten Updates für die Storage-Daten zu erhalten. 
+---
+= Aktualisieren Sie die Hostdaten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können eine On-Demand-Erkennung auf dem ESXi-Host ausführen, um die neuesten Updates für die Storage-Daten zu erhalten.
+
+*Schritte*
+
+. Klicken Sie auf der VMware vSphere Web Client-Startseite auf *Hosts und Cluster*.
+. Klicken Sie mit der rechten Maustaste auf einen Host und wählen Sie dann *NetApp ONTAP Tools* > *Host-Daten aktualisieren*.
+. Wählen Sie im Popup-Fenster *Update Host Data* *Yes* aus, um die Erkennung aller verbundenen Speichersysteme neu zu starten.
+

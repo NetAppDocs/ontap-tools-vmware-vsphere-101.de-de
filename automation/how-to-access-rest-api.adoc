@@ -1,0 +1,54 @@
+---
+permalink: automation/how-to-access-rest-api.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Sie können auf die ONTAP REST API auf unterschiedliche Weise zugreifen. 
+---
+= Zugriff auf ONTAP Tools für VMware vSphere REST-API
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können auf die ONTAP REST API auf unterschiedliche Weise zugreifen.
+
+
+
+== Netzwerküberlegungen
+
+Sie können über folgende Schnittstellen eine Verbindung zur REST API herstellen:
+
+* Cluster-Management-LIF
+* Node Management-LIF
+* SVM-Management-LIF
+
+
+Die von Ihnen ausgewählte LIF sollte zur Unterstützung des HTTPS-Managementprotokolls konfiguriert sein. Außerdem sollte die Firewall-Konfiguration in Ihrem Netzwerk den HTTPS-Datenverkehr zulassen.
+
+
+NOTE: Sie sollten immer eine Cluster-Management-LIF verwenden. Dadurch werden die API-Anforderungen über alle Nodes verteilt und Knoten, die offline sind oder Konnektivitätsprobleme haben, werden vermieden. Wenn Sie mehrere Cluster-Management-LIFs konfiguriert haben, entsprechen diese alle dem Zugriff auf die REST-API.
+
+
+
+== ONTAP Tools für VMware vSphere API – Online-Dokumentation
+
+Der Zugriff auf Swagger erfolgt über den Hyperlink auf der Support-Seite des Plug-ins „NetApp ONTAP Tools for VMware vSphere“.
+
+Das Format der URL, die zum Zugriff auf die Dokumentationsseite der neuesten Version der API verwendet wird, lautet:
+
+`https://<loadbalancer_ip_address>/docs/API`
+
+
+
+== Benutzerdefinierte Software und Tools
+
+Auf die ONTAP Tools für die VMware vSphere API können Sie über eine Reihe verschiedener Programmiersprachen und Tools zugreifen. Beliebte Optionen sind Python, Java, Curl und PowerShell. Ein Programm, Skript oder Tool, das die API verwendet, fungiert als REST-Web-Services-Client. Die Verwendung einer Programmiersprache vermittelt ein tieferes Verständnis der API und bietet die Möglichkeit, ONTAP Tools für die VMware vSphere Administration zu automatisieren.
+
+Das Format der Basis-URL, die für den direkten Zugriff auf die neueste Version der API verwendet wird, lautet:
+
+`https://<loadbalancer_ip_address>/API`
+
+Um auf eine bestimmte API-Version zuzugreifen, in der mehrere Versionen unterstützt werden, lautet das Format der URL:
+
+`https://<loadbalancer_ip_address>/API/v1`

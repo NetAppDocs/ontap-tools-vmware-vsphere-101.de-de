@@ -1,0 +1,42 @@
+---
+permalink: protect/configure-on-srm-appliance.html 
+sidebar: sidebar 
+keywords:  
+summary: 'Nachdem Sie die SRM-Appliance bereitgestellt haben, sollten Sie SRA auf der SRM-Appliance konfigurieren. Durch die erfolgreiche Konfiguration von SRA kann die SRM-Appliance zum Disaster-Recovery-Management mit SRA kommunizieren. Sie sollten ONTAP-Tools für VMware vSphere Credentials \(IP-Adresse und Administratorkennwort\) in der SRM-Appliance speichern, um die Kommunikation zwischen der SRM-Appliance und SRA zu ermöglichen.' 
+---
+= Konfigurieren Sie SRA auf der SRM-Appliance
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Nachdem Sie die SRM-Appliance bereitgestellt haben, sollten Sie SRA auf der SRM-Appliance konfigurieren. Durch die erfolgreiche Konfiguration von SRA kann die SRM-Appliance zur Disaster-Recovery-Verwaltung mit SRA kommunizieren. Sie sollten ONTAP Tools für VMware vSphere Credentials (IP-Adresse) in der SRM-Appliance speichern, um die Kommunikation zwischen der SRM-Appliance und SRA zu ermöglichen.
+
+*Was Sie brauchen*
+
+Sie sollten die Datei _tar.gz_ von heruntergeladen haben https://mysupport.netapp.com/site/products/all/details/otv/downloads-tab["NetApp Support-Website"].
+
+*Über diese Aufgabe*
+
+Die Konfiguration von SRA auf einer SRM-Appliance speichert die SRA-Anmeldedaten in der SRM-Appliance.
+
+*Schritte*
+
+. Klicken Sie auf dem Bildschirm der SRM-Appliance auf *Storage Replication Adapter* > *New Adapter*.
+. Laden Sie die Datei _.tar.gz_ in SRM hoch.
+. Melden Sie sich mit einem Administratorkonto bei der SRM-Appliance mit Putty an.
+. Wechseln Sie mit dem folgenden Befehl zum Root-Benutzer: `su root`
+. Führen Sie den Befehl aus `cd /var/log/vmware/srm` , um zum Protokollverzeichnis zu navigieren.
+. Geben Sie am Protokollspeicherort den Befehl ein, um die von SRA verwendete Docker-ID zu erhalten: `docker ps -l`
+. Um sich bei der Container-ID anzumelden, geben Sie den Befehl ein: `docker exec -it -u srm <container id> sh`
+. Konfigurieren Sie SRM mit den ONTAP Tools für VMware vSphere IP-Adresse und Passwort mit dem folgenden Befehl: `perl command.pl -I --otv-ip <OTV_IP>:8443 --otv-username <Application username> --otv-password <Application password> --vcenter-guid <VCENTER_GUID>'`
++
+
+NOTE: Sie müssen den Kennwortwert in einfachen Anführungszeichen angeben, um sicherzustellen, dass das Perl-Skript die Sonderzeichen im Passwort nicht als Trennzeichen der Eingabe liest.
+
+. Überprüfen Sie die Adapter erneut, um sicherzustellen, dass die Details auf der Seite SRM Storage Replication Adapters aktualisiert werden.
++
+Eine Erfolgsmeldung, die bestätigt, dass die Speicher-Anmeldedaten gespeichert werden, wird angezeigt. SRA kann mit dem SRA-Server unter Verwendung der angegebenen IP-Adresse, des Ports und der Anmeldeinformationen kommunizieren.
+
+

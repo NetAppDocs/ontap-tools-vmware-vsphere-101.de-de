@@ -1,0 +1,30 @@
+---
+permalink: configure/registration-process.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie können den VASA-Provider mit einer vCenter Server-Instanz über die ONTAP-Tools für die Remote-Plug-in-Schnittstelle von VMware vSphere registrieren und abmelden. 
+---
+= Registrieren Sie den VASA Provider mit einer vCenter Server-Instanz
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Sie können den VASA-Provider mit einer vCenter Server-Instanz über die ONTAP-Tools für die Remote-Plug-in-Schnittstelle von VMware vSphere registrieren und abmelden. Im Abschnitt „VASA Provider Settings“ wird der Registrierungsstatus des VASA Providers für den ausgewählten vCenter Server angezeigt.
+
+*Schritte*
+
+. Melden Sie sich mit beim vSphere-Client an `\https://vcenterip/ui`
+. Klicken Sie auf der Shortcuts-Seite unter dem Plug-ins-Bereich auf *NetApp ONTAP Tools*.
+. Wählen Sie *Einstellungen* > *VASA Provider-Einstellungen*. Der Registrierungsstatus des VASA-Providers wird als nicht registriert angezeigt.
+. Klicken Sie auf die Schaltfläche *REGISTRIEREN*, um den VASA Provider zu registrieren.
+. Geben Sie einen Namen für den VASA-Provider ein, und stellen Sie ONTAP-Tools für die Anmeldedaten der VMware vSphere-Anwendung bereit. Klicken Sie anschließend auf *REGISTRIEREN*.
+. Bei erfolgreicher Registrierung und Seitenaktualisierung zeigt die Benutzeroberfläche den Status, den Namen und die Version des registrierten VASA-Providers an. Die Aktion zur Registrierung wird aktiviert.
+. Wenn Sie die Registrierung des VASA-Providers aufheben möchten, führen Sie die folgenden Schritte aus:
++
+.. Um die Registrierung des VASA-Providers aufzuheben, wählen Sie die Option *Registrierung aufheben* unten im Bildschirm.
+.. Auf der Seite *Registrierung des VASA-Providers aufheben* sehen Sie den Namen des VASA-Providers. Geben Sie auf dieser Seite die Anmeldeinformationen des Anwendungsbenutzers ein und klicken Sie auf *Registrierung aufheben*.
+
+
+

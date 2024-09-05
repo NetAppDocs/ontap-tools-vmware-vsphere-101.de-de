@@ -1,0 +1,32 @@
+---
+permalink: automation/svm-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Um SVM-Benutzeranmeldeinformationen für die Bereitstellung von Datastores zu verwenden, erstellt ONTAP Tools für VMware vSphere Volumes im Aggregat, DAS in der POST-API für Datastores angegeben ist. 
+---
+= Anforderungen für die SVM-Aggregatzuordnung
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Um SVM-Benutzeranmeldeinformationen für die Bereitstellung von Datastores zu verwenden, erstellt ONTAP Tools für VMware vSphere Volumes im Aggregat, DAS in der POST-API für Datastores angegeben ist. In ONTAP ist es nicht möglich, Volumes auf Aggregaten ohne Zuordnung auf einer SVM mithilfe der SVM-Benutzeranmeldedaten zu erstellen. Zur Lösung dieses Problems ordnen Sie die SVMs wie hier beschrieben mit den Aggregaten zu. Verwenden Sie dazu die ONTAP REST-API oder CLI.
+
+ONTAP-REST-API:
+
+[listing]
+----
+PATCH "/api/svm/svms/f16f0935-5281-11e8-b94d-005056b46485"
+'{"aggregates":{"name":["aggr1","aggr2","aggr3"]}}'
+----
+ONTAP-CLI:
+
+[listing]
+----
+sti115_vsim_ucs630f_aggr1 vserver show-aggregates
+AvailableVserver Aggregate State Size Type SnapLock
+Type
+svm_test sti115_vsim_ucs630f_aggr1
+online 10.11GB vmdisk non-snaplock
+----

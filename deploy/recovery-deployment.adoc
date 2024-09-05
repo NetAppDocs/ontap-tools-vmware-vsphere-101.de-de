@@ -1,0 +1,55 @@
+---
+permalink: deploy/recovery-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: Wenn Sie Ihre ONTAP-Tools für die VMware vSphere-Einrichtung verlieren, aber Ihre ONTAP funktionieren lassen, können Sie ONTAP-Tools für die VMware vSphere-Einrichtung mithilfe des ONTAP wiederherstellen. Wenn Sie das Setup verlieren, fahren Sie das Setup ordnungsgemäß herunter. 
+---
+= Stellen Sie Ihre ONTAP Tools für die Einrichtung von VMware vSphere wieder her
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Wenn Sie Ihre ONTAP Tools für die VMware vSphere-Einrichtung verlieren, können Sie die ONTAP Tools für die VMware vSphere-Einrichtung unter Verwendung der in den ONTAP Volume-Daten verfügbaren Daten wiederherstellen. Wenn Sie das Setup verlieren, fahren Sie das Setup ordnungsgemäß herunter.
+
+
+NOTE: Sie können Ihre ONTAP Tools für die VMware vSphere-Einrichtung nicht wiederherstellen, wenn Probleme mit vCenter Server- oder ONTAP-Datenmanagement-Software auftreten.
+
+*Schritte*
+
+. Melden Sie sich beim vSphere-Server an.
+. Navigieren Sie zum Ressourcen-Pool, zum Node-Cluster oder zum Host, auf dem Sie die OVA bereitstellen möchten.
+. Klicken Sie mit der rechten Maustaste auf den gewünschten Speicherort und wählen Sie *OVF-Vorlage bereitstellen*.
+. Sie können entweder die URL für die _.ova_-Datei eingeben oder in den Ordner navigieren, in dem die _.ova_-Datei gespeichert ist, und dann *Weiter* auswählen.
++
+
+NOTE: Sie sollten denselben OVA-Build verwenden, den Sie für die Installation der Wiederherstellungseinrichtung verwendet haben.
+
+. Wählen Sie einen Namen und Ordner für die virtuelle Maschine aus und wählen Sie *Weiter*.
+. Wählen Sie den Host aus und wählen Sie *Weiter*.
+. Überprüfen Sie die Zusammenfassung der Vorlage und wählen Sie *Weiter*.
+. Lesen und akzeptieren Sie die Lizenzvereinbarung und wählen Sie *Weiter*.
+. Wählen Sie im Fenster *Konfiguration* die Option *Wiederherstellung*.
+. Wählen Sie im Fenster *Speicher auswählen* den Speicher für die Konfigurationen und Festplattendateien aus.
+. Wählen Sie im Fenster *Netzwerke auswählen* für jedes Quellnetzwerk ein Zielnetzwerk aus.
++
+
+NOTE: Sie müssen die IP-Adresse des Load Balancer und die IP-Adresse des Kubernetes API Servers beibehalten. Sie können die Node-IP-Adresse ändern oder dieselbe IP-Adresse beibehalten.
+
+. Wählen Sie *Template anpassen* > *System Configuration*-Fenster. Geben Sie die folgenden Details ein:
++
+.. Anwendungsbenutzername und Kennwort: Dieser Benutzername und dieses Kennwort werden für die Registrierung von VASA-Provider und SRA im vCenter Server verwendet. Dies kann sich von dem Benutzernamen und Passwort unterscheiden, die bei der ersten Bereitstellung angegeben wurden.
+.. Das Kontrollkästchen *ASUP aktivieren* ist standardmäßig aktiviert.
+
+
+
+
+AutoSupport kann nur während der Implementierung aktiviert oder deaktiviert werden. .. Geben Sie im Feld *ASUP Proxy URL* diese URL ein, um eine Blockierung der Firewall bei der Übertragung von AutoSupport-Daten zu vermeiden. .. Administratorbenutzername und Administratorkennwort: Dies ist das Passwort, das für die Anmeldung beim ONTAP-Tools-Manager verwendet wird. Dies kann sich von dem Benutzernamen und Passwort unterscheiden, die bei der ersten Bereitstellung angegeben wurden. .. Geben Sie Ihre NTP-Server-Informationen in das Feld *NTP-Server* ein. .. Maintenance user password: Dies wird verwendet, um Zugriff auf Wartungskonsolenoptionen zu gewähren. . Geben Sie im Fenster *Vorlage anpassen* > *Bereitstellungskonfiguration* die während der Bereitstellung angegebenen Details ein. Alle Werte in diesem Abschnitt sollten mit Ausnahme des Daten-LIF-Werts identisch sein, die während der ersten Implementierung angegeben wurden.
+
+
+NOTE: Der Storage-SVM-Name sollte nicht geändert werden, da dort die Recovery-Daten gespeichert werden. Dies gilt auch für direkt hinzugefügte SVM-Benutzerkonten. . Im Fall der HA-Bereitstellung Wiederherstellung, geben Sie die folgenden Details: .. Details zur Content Library .. VCenter-Konfigurationsdetails. . Geben Sie im Fenster *Customize template* > *Node Configuration* die Details gemäß dem Setup ein, das Sie wiederherstellen möchten, nicht-HA oder HA-Setup. . Überprüfen Sie die Details im Fenster *Ready to Complete*, wählen Sie *Finish*.
+
++ während die Bereitstellungsaufgabe erstellt wird, wird der Fortschritt in der vSphere-Taskleiste angezeigt. . Schalten Sie die VM nach Abschluss der Aufgabe ein.
+
++ die Installation beginnt. Sie können den Installationsfortschritt in der Web-Konsole der VM verfolgen. Im Rahmen der Installation werden Node-Konfigurationen validiert. Die Eingaben, die unter verschiedenen Abschnitten unter der Vorlage „Anpassen“ im OVF-Formular bereitgestellt werden, werden validiert. Bei Unstimmigkeiten werden Sie in einem Dialogfeld aufgefordert, Korrekturmaßnahmen zu ergreifen. . Nehmen Sie die erforderlichen Änderungen in der Dialogaufforderung vor. Verwenden Sie die Tabulatortaste, um über das Bedienfeld zu navigieren, um Ihre Werte einzugeben, *OK* oder *Abbrechen*. . Bei der Auswahl von *OK* oder *Cancel* werden die angegebenen Werte erneut validiert. Mit den ONTAP-Tools für VMware können Sie drei Versuche durchführen, ungültige Werte zu korrigieren. Wenn Sie Probleme nach drei Versuchen nicht beheben können, wird die Produktinstallation angehalten, und Sie werden aufgefordert, die Installation auf einer neuen VM zu versuchen. . Nach der erfolgreichen Installation zeigt die Webkonsole den Status der ONTAP Tools für VMware vSphere an. Nach erfolgreicher Installation sollten Sie die Hardwareanforderungen gemäß den Richtlinien auf der Seite manuell bearbeiten link:../deploy/sizing-requirements.html["Voraussetzungen für die Bereitstellung von ONTAP-Tools für VMware vSphere"] .

@@ -1,0 +1,34 @@
+---
+permalink: configure/verify-registration.html 
+sidebar: sidebar 
+keywords:  
+summary: Vergewissern Sie sich, dass die Onboarding-SVM unter VASA Provider über die vCenter Client-UI aufgeführt ist. 
+---
+= Überprüfen Sie den registrierten VASA-Anbieter
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vergewissern Sie sich, dass der Onboarding VASA-Provider in der vCenter Client-UI und über die Remote-Plug-in-UI unter VASA Provider aufgeführt ist.
+
+*Schritte*
+
+. Gehen Sie wie folgt vor, um VASA Provider von der vCenter-Client-Benutzeroberfläche zu überprüfen:
++
+.. Navigieren Sie zu vCenter Server.
+.. Melden Sie sich mit den Administratoranmeldeinformationen an.
+.. Wählen Sie *Speicheranbieter* Aus.
+.. Wählen Sie *Konfigurieren*.
+.. Überprüfen Sie unter Storage Provider/Storage Back-Ends, ob der Onboarding VASA Provider korrekt aufgeführt ist.
+
+
+. Gehen Sie wie folgt vor, um VASA Provider von der Remote-Plug-in-Benutzeroberfläche zu überprüfen:
++
+.. Melden Sie sich mit beim vSphere-Client an `\https://vcenterip/ui`
+.. Klicken Sie auf der Shortcuts-Seite unter dem Plug-ins-Bereich auf *NetApp ONTAP Tools*.
+.. Sie können den registrierten VASA Provider auf der Übersichtsseite und auf der Seite *Einstellungen* > *VASA Provider Einstellungen* sehen.
+
+
+

@@ -1,0 +1,19 @@
+---
+permalink: automation/overview-rest-apis.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Beschreibt, wie Sie mithilfe von REST-APIs mehrere ONTAP Tools für VMware vSphere Managementvorgänge ausführen. REST-APIs sind über die Swagger Webseite zugänglich. 
+---
+= Übersicht ÜBER REST-APIs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+REST-APIs können zur Ausführung mehrerer ONTAP Tools für Managementvorgänge von VMware vSphere verwendet werden. REST-APIs sind über die Swagger Webseite zugänglich.
+
+Sie können die Swagger-Webseite unter _\https://loadbalancerIP:8443/_ aufrufen, um die REST-API-Dokumentation anzuzeigen und einen API-Aufruf manuell auszustellen.
+
+
+NOTE: Alle APIs haben Anforderungskörper und Beispiele, die auf der Seite „swagger“ erwähnt werden. Die in diesem Abschnitt aufgeführten Workflows und Beispiele dienen lediglich als Referenz.

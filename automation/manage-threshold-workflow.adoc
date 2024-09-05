@@ -1,0 +1,48 @@
+---
+permalink: automation/manage-threshold-workflow.html 
+sidebar: sidebar 
+keywords: REST APIs, swagger 
+summary: Ein Workflow ist eine Sequenz aus einem oder mehreren Schritten, die zur Ausführung einer bestimmten administrativen Aufgabe oder eines bestimmten Ziels erforderlich sind. 
+---
+= Speicherschwellenwert verwalten
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie die folgende get Threshold API, um die konfigurierten Storage-Grenzwerte für Volume und Aggregat abzurufen.
+
+[listing]
+----
+GET​/virtualization​/api​/v1​/vcenters​/{vcguid}​/storage-thresholds
+----
+Beispiele: Rufen Sie die Storage-Schwellenwerte pro vCenter Server-Instanz von vCenter GUID ab
+
+[listing]
+----
+GET "/api/v1/vcenters/beded9ad-6bbb-4c9e-b4c6-691250bfe2da/storage-thresholds"
+----
+Verwenden Sie den folgenden PATCH-Konfigurationsalarm für Lautstärke und Aggregat, um eine Benachrichtigung zu generieren, wenn konfigurierte Grenzwerte erreicht werden.
+
+[listing]
+----
+PATCH​/virtualization​/api​/v1​/vcenters​/{vcguid}​/storage-thresholds
+----
+Beispiele: Aktualisieren Sie die Storage Thresholds per vCenter by vCenter GUID. Die Standardgrenzwerte sind 80 % für nahezu voll und 90 % für voll. Ändern aller Schwellenwerteinstellungen
+
+[listing]
+----
+{{{}PATCH "/api/v1/vcenters/beded9ad-6bbb-4c9e-b4c6-691250bfe2da/storage-thresholds"
+Request Body
+{
+"volume":
+
+{ "nearly_full_percent": 80, "full_percent": 90 }
+,
+"aggregate": {
+"nearly_full_percent": 80,
+"full_percent": 90
+}
+}{}}}{}
+----

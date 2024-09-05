@@ -1,0 +1,55 @@
+---
+permalink: deploy/prepare-deployment.html 
+sidebar: sidebar 
+keywords:  
+summary: Sie sollten ONTAP Tools für VMware vSphere in Ihrer Umgebung implementieren und die erforderlichen Parameter angeben, damit die Appliance verwendet werden kann. 
+---
+= Bereiten Sie die Implementierung von ONTAP Tools für VMware vSphere vor
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Vor der Implementierung von ONTAP Tools für VMware vSphere sollten Sie sich der grundlegenden Storage-Backend-Anforderungen, Applikationsanforderungen und Lizenzanforderungen bewusst sein. Planen Sie Ihre Implementierung im Voraus und entscheiden Sie, wie Sie ONTAP Tools für VMware vSphere in Ihrer Umgebung konfigurieren möchten.
+
+
+
+== Bereitstellung wird vorbereitet
+
+Im Folgenden finden Sie ONTAP Tools für VMware vSphere Anforderungen, bevor Sie mit der Implementierung fortfahren:
+
+. Konfigurieren und richten Sie Ihre vCenter Server-Umgebung ein.
+. Laden Sie die Datei _.ova_ herunter.
+. (Optional) wird für Automatisierungsbenutzer verwendet - Sammeln Sie die Postman-Sammlungen JSON-Datei von NetApp zur Verfügung gestellt.
+. Anmeldedaten des übergeordneten vCenter-Servers für die Bereitstellung der OVA. Das Passwort für den übergeordneten vCenter Server darf diese Sonderzeichen nicht enthalten (€, ', ')
+. Stellen Sie sicher, dass der Host oder der Ressourcenpool, auf dem die OVA bereitgestellt wirdlink:../deploy/sizing-requirements.html["Voraussetzungen für die Bereitstellung von ONTAP-Tools für VMware vSphere"], über die im Abschnitt angegebenen Mindestressourcen verfügt.
+. Die Anmeldeinformationen für Ihre vCenter Server-Instanz, mit der sich die ONTAP-Tools für VMware vSphere nach der Bereitstellung zur Registrierung verbinden.
+. Löschen Sie den Browser-Cache.
+. Für die Implementierung ohne HA benötigen Sie drei freie IP-Adressen: Eine freie IP-Adresse für den Load Balancer und eine freie IP-Adresse für die Kubernetes-Kontrollebene und eine IP-Adresse für den Node. Für HA-Implementierung benötigen Sie zusammen mit diesen drei IP-Adressen zwei weitere IP-Adressen für den zweiten und dritten Node. Hostnamen sollten vor der Zuweisung den freien IP-Adressen auf dem DNS zugeordnet werden. Alle fünf IP-Adressen sollten sich in demselben VLAN befinden, das für die Bereitstellung ausgewählt wurde.
+. Nach dem Hochladen sollte die Vorlage der Inhaltsbibliothek nach der Bereitstellung nicht gelöscht werden, da sie bei einem Neustart verwendet wird.
+. Ordnen Sie in einer Multi-vCenter-Bereitstellung, bei der benutzerdefinierte CA-Zertifikate erforderlich sind, den Domänennamen, auf dem das Zertifikat ausgestellt wird, der virtuellen IP-Adresse zu. Führen Sie eine Prüfung des Domänennamens _nslookup_ durch, um zu überprüfen, ob die Domäne auf die beabsichtigte IP-Adresse aufgelöst wird. Die Zertifikate sollten mit dem Domänennamen und der IP-Adresse der Load Balancer-IP-Adresse erstellt werden.
+. IPv4/IPv6-unterstütztes VLAN – Pure IPV6 wird nicht unterstützt. Der gemischte Modus wird unterstützt, wenn VLAN sowohl IPv6- als auch IPv4-Adressen enthält.
+. NTP-Server, der dem vCenter-Server für die Zeitsynchronisierung zur Verfügung gestellt wird.
+. Statische IP-Adresse Konfigurationsdetails für den Knoten oder die VM, auf dem die OVA bereitgestellt wird (obligatorisch), sowie weitere Details.
++
+.. Hostname des vCenter-Servers (vCenter, in dem die OVA bereitgestellt wird)
+.. VCenter Server-Benutzername (vCenter, in dem die OVA bereitgestellt wird)
+.. VCenter Server-Kennwort (vCenter, in dem die OVA bereitgestellt wird)
+.. Ressourcen-Pool
+.. Daten-LIF (IPv4/IPv6)
+.. Management-LIF
+.. ONTAP-Benutzername
+.. ONTAP-Passwort
+.. SVM-Name
+.. Protokoll
+.. Virtuelle IP-Adressen für die Kubernetes-Kontrollebene:
+.. Drop-down für HA/NICHT-HA
+.. Liste der Hostnamen
+.. IP-Adressen (Zeichenfolge)
+.. Name der Inhaltsbibliothek
+.. OVF-Vorlagenname
+.. IPv6-Gateway (optional)
+
+
+

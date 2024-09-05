@@ -1,0 +1,29 @@
+---
+permalink: automation/manage-network-workflows.html 
+sidebar: sidebar 
+keywords: REST API categories 
+summary: Managen des Netzwerkzugriffs 
+---
+= Managen des Netzwerkzugriffs
+:allow-uri-read: 
+:icons: font
+:imagesdir: ../media/
+
+
+[role="lead"]
+Verwenden Sie die folgende API, um IP-Adressen für die Whitelisting hinzuzufügen:
+
+[listing]
+----
+patch /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+
+GET /api/v1/vcenters/{vcguid}/settings/ip-whitelist
+
+{
+    value: string
+}
+----
