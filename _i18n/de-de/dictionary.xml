@@ -1746,10 +1746,7 @@
   <block id="a239701adb72159a71164b036c18a53a" category="sidebar">Konfigurieren Sie geschützte Ressourcen und Recovery-Standortressourcen</block>
   <block id="6956cfc9382ccb41c8ac57f99255b409" category="sidebar">Überprüfen Sie die replizierten Storage-Systeme</block>
   <block id="a2fa58344be7fbd9a2be0320a8df0f77" category="sidebar">Upgrade von ONTAP-Tools</block>
-  <block id="45c0cb8a573040ec3a3c91b49388ce77" category="summary">Erfahren Sie mehr über den Vergleich der Funktionen von OTV 9 und OTV 10</block>
-  <block id="bec34363c22ae7f416bb150033204752" category="doc">Vergleich der Funktionen von OTV 9 und OTV 10</block>
   <block id="9ed4a475dd3705157a9fed8811f63ce2" category="inline-link">NetApp Interoperabilitäts-Matrix-Tool</block>
-  <block id="7bbd8ba71af073421f64a911c595d804" category="paragraph">Erfahren Sie, ob die Migration von OTV 9 zu OTV 10.1 das Richtige für Sie ist. Die aktuellsten Informationen zur Kompatibilität finden Sie unter<block ref="0aaf04254af18646f3d246cd4a4b417d" category="inline-link-rx"></block>.</block>
   <block id="21021ea0e52be8e9c599f4dff41e5be0" category="cell">Funktion</block>
   <block id="e2e5efdc8b340ced50733afbe15a4fad" category="cell">ONTAP-Tools 9.13</block>
   <block id="ec00f002c530dcfbc3a0e06a58d47937" category="cell">ONTAP-Tools 10.1</block>
@@ -1760,11 +1757,7 @@
   <block id="f69940d2c889c5ba58609514e4ec4bff" category="cell">ONTAP 9.9.1 bis ONTAP 9.15.1</block>
   <block id="d4dcb3d0be17e55a6784a2f961f93bc2" category="cell">ONTAP 9.12.1 bis ONTAP 9.14.1</block>
   <block id="d67ece44624c7aa69b0f38715d1ac2fb" category="cell">VMware Versionsunterstützung</block>
-  <block id="e14179d4b312d9cfca14436389327be5" category="cell">VSphere 7.x-8.x SRM 8.5-9.0</block>
-  <block id="bcfc58d0493001a6860f0cd2b68840b3" category="cell">VSphere 7.x-8.x SRM 8.7-9.0</block>
   <block id="30388d1a3ab1a01f6930553a577eb80b" category="cell">Protokollunterstützung</block>
-  <block id="d5ff81a2866c816e348cdd6f08ed39e4" category="cell">Herkömmliche Datastores: NFS (v3 und v4.1), VMFS (iSCSI und FCP) VVols: ISCSI, FCP, NVMe/FC, NFS v3</block>
-  <block id="ef79cc3ec55f1ee802c8bef4053dfebe" category="cell">Herkömmliche Datastores: NFS (v3 und v4.1), VMFS (iSCSI) VVols: ISCSI, NFS v3</block>
   <block id="2d215ebfc0280f8163d071454ec7ce01" category="cell">Skalierbarkeit</block>
   <block id="250a44c4a8c52c86430d21b997042d19" category="cell">Hosts und VMs: 300 Hosts, bis zu 10.000 VMs Datastores: 600 NFS, bis zu 50 VMFS, bis zu 250 VVols: Bis zu 14.000</block>
   <block id="e9ecfce2c9d4f4584ac79acfbd1b505a" category="cell">Hosts und VMs: 600 Hosts VVols: Bis zu 140.000</block>
@@ -1777,9 +1770,7 @@
   <block id="705b94fd1b511a1c9c06a21279f92615" category="paragraph">Erfahren Sie mehr über die neuen und erweiterten Funktionen, die in den ONTAP Tools für VMware vSphere 10.1 verfügbar sind.</block>
   <block id="6157debca7d3f3948f1725114e76924b" category="inline-xref-macro">Neuerungen bei ONTAP Tools für VMware vSphere 10.1</block>
   <block id="8ad73d2923c566307bb64baa5d027f1e" category="paragraph">Eine vollständige Liste der neuen Funktionen und Verbesserungen finden Sie unter <block ref="ec6dda21da143161509af94ddcaf0c28" category="inline-xref-macro-rx"></block>.</block>
-  <block id="bcc22b06b618a9db830b76770830c578" category="paragraph">Weitere Informationen darüber, ob die Migration von ONTAP-Tools für VMware vSphere 9 zu ONTAP-Tools 10.1 für Ihre Bereitstellung geeignet ist, finden Sie unter <block ref="d850f8a270263c8f340a6395269dd624" category="inline-xref-macro-rx"></block>. Die Migration wird von ONTAP-Tools für VMware vSphere 9.10D2, 9.11D4, 9.12 und 9.13 Versionen auf ONTAP-Tools 10.1 unterstützt.</block>
   <block id="7c9c963f9e315e09a32dfb79b88d92b8" category="paragraph">Details zu bekannten Problemen und Einschränkungen in ONTAP-Tools für VMware vSphere 10.1 finden Sie in der<block ref="82f186bdee145660ad8025b64bc47ede" category="inline-link-rx"></block>. Sie müssen sich mit Ihrem NetApp Konto anmelden oder ein Konto erstellen, um auf die Versionshinweise zuzugreifen.</block>
-  <block id="e5af075103bba1e5e194c9d0c74f1e1f" category="summary">Erfahren Sie mehr über die neuen in OTV 10,1 verfügbaren Funktionen.</block>
   <block id="246423e206dcb100415831177697c50a" category="doc">Neuerungen bei ONTAP Tools für VMware vSphere 10.1</block>
   <block id="8531963bc35662f1a07cf43203d718fe" category="paragraph">Erfahren Sie mehr über die neuen Funktionen in den ONTAP Tools für VMware vSphere 10.1.</block>
   <block id="06933067aafd48425d67bcb01bba5cb6" category="cell">Aktualisieren</block>
@@ -1823,4 +1814,13 @@
   <block id="3e68f004e881d64eee5503230989baef" category="paragraph">IPv6-Adressunterstützung für Speicher und vCenter-Onboarding</block>
   <block id="21a0626546cb66a4a2685b4121ca68a2" category="paragraph">Sie können Speicher-Back-Ends mit IPv4-Adressen, IPv6-Adressen oder vollständig qualifizierten Domänennamen (FQDNs) integrieren. Storage-Services und Storage Proxy-Services verwenden zum Kommunizieren mit der ONTAP-REST-API dieselben IPv4- oder IPv6-Adressen. Data Pathing wird mit IPv4-Adressen, IPv6-Adressen oder FQDN unter Verwendung von Regeln für Exportrichtlinien unterstützt.</block>
   <block id="5dd03e8d039863e563e049be198c3fd3" category="sidebar">Versionshinweise</block>
+  <block id="7cf21d459cdbb9c2a1e4864da9f56b5a" category="summary">Erfahren Sie mehr über den Vergleich der Funktionen der ONTAP Tools für VMware vSphere 9 und der ONTAP Tools für VMware vSphere 10</block>
+  <block id="8db6f8bda67c3085df85aeea7d620ac7" category="doc">Vergleich der Funktionen der ONTAP Tools für VMware vSphere 9 und der ONTAP Tools für VMware vSphere 10</block>
+  <block id="46593fa664efb28c6d0dbcda3cacd798" category="paragraph">Erfahren Sie, wie eine Migration von ONTAP-Tools für VMware vSphere 9 zu ONTAP-Tools für VMware vSphere 10.1 genau das Richtige für Sie ist. Die aktuellsten Informationen zur Kompatibilität finden Sie unter<block ref="0aaf04254af18646f3d246cd4a4b417d" category="inline-link-rx"></block>.</block>
+  <block id="af0223f5c63fe0b5a6e75d3087868abd" category="cell">VSphere 7.x-8.x VMware Site Recovery Manager (SRM) 8.5 auf VMware Live Site Recovery 9.0</block>
+  <block id="170ea24c94c478abd1871386c2d1ec72" category="cell">VSphere 7.x-8.x VMware Site Recovery Manager (SRM) 8.7 auf VMware Live Site Recovery 9.0</block>
+  <block id="e810af0cb36135a5b8e6f2da4440d6cb" category="cell">NFS- und VMFS-Datastores: NFS (v3 und v4.1), VMFS (iSCSI und FCP) VVols-Datastores: ISCSI, FCP, NVMe/FC, NFS v3</block>
+  <block id="8bc8491da19ddf762b07de3144d61829" category="cell">NFS- und VMFS-Datastores: NFS (v3 und v4.1), VMFS (iSCSI) VVols-Datastores: ISCSI, NFS v3</block>
+  <block id="9f309a586570bbc1fff689704b3dad01" category="paragraph">Weitere Informationen darüber, ob die Migration von ONTAP-Tools für VMware vSphere 9 zu ONTAP-Tools 10.1 für Ihre Implementierung geeignet ist, finden Sie unter <block ref="947428ca1064f8d19137fb8976698998" category="inline-xref-macro-rx"></block>. Die Migration wird von ONTAP-Tools für VMware vSphere 9.10D2, 9.11D4, 9.12 und 9.13 Versionen auf ONTAP-Tools 10.1 unterstützt.</block>
+  <block id="ed8359854c43609fca7bc8a46cca9eac" category="sidebar">Vergleich der Funktionen der ONTAP Tools 9 und ONTAP Tools 10</block>
 </blocks>

@@ -1,17 +1,17 @@
 ---
-permalink: release-notes/otv-9-otv10-feature-comparison.html 
+permalink: release-notes/ontap-tools-9-ontap-tools-10-feature-comparison.html 
 sidebar: sidebar 
 keywords: release notes, feature, comparison 
-summary: Erfahren Sie mehr über den Vergleich der Funktionen von OTV 9 und OTV 10 
+summary: Erfahren Sie mehr über den Vergleich der Funktionen der ONTAP Tools für VMware vSphere 9 und der ONTAP Tools für VMware vSphere 10 
 ---
-= Vergleich der Funktionen von OTV 9 und OTV 10
+= Vergleich der Funktionen der ONTAP Tools für VMware vSphere 9 und der ONTAP Tools für VMware vSphere 10
 :allow-uri-read: 
 :icons: font
 :imagesdir: ../media/
 
 
 [role="lead"]
-Erfahren Sie, ob die Migration von OTV 9 zu OTV 10.1 das Richtige für Sie ist. Die aktuellsten Informationen zur Kompatibilität finden Sie unter https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^].
+Erfahren Sie, wie eine Migration von ONTAP-Tools für VMware vSphere 9 zu ONTAP-Tools für VMware vSphere 10.1 genau das Richtige für Sie ist. Die aktuellsten Informationen zur Kompatibilität finden Sie unter https://mysupport.netapp.com/matrix["NetApp Interoperabilitäts-Matrix-Tool"^].
 
 [cols="20%,40%,40%"]
 |===
@@ -24,10 +24,10 @@ Erfahren Sie, ob die Migration von OTV 9 zu OTV 10.1 das Richtige für Sie ist. 
 | ONTAP Release Qualification | ONTAP 9.9.1 bis ONTAP 9.15.1 | ONTAP 9.12.1 bis ONTAP 9.14.1 
 
 
-| VMware Versionsunterstützung | VSphere 7.x-8.x SRM 8.5-9.0 | VSphere 7.x-8.x SRM 8.7-9.0 
+| VMware Versionsunterstützung | VSphere 7.x-8.x VMware Site Recovery Manager (SRM) 8.5 auf VMware Live Site Recovery 9.0 | VSphere 7.x-8.x VMware Site Recovery Manager (SRM) 8.7 auf VMware Live Site Recovery 9.0 
 
 
-| Protokollunterstützung | Herkömmliche Datastores: NFS (v3 und v4.1), VMFS (iSCSI und FCP) VVols: ISCSI, FCP, NVMe/FC, NFS v3 | Herkömmliche Datastores: NFS (v3 und v4.1), VMFS (iSCSI) VVols: ISCSI, NFS v3 
+| Protokollunterstützung | NFS- und VMFS-Datastores: NFS (v3 und v4.1), VMFS (iSCSI und FCP) VVols-Datastores: ISCSI, FCP, NVMe/FC, NFS v3 | NFS- und VMFS-Datastores: NFS (v3 und v4.1), VMFS (iSCSI) VVols-Datastores: ISCSI, NFS v3 
 
 
 | Skalierbarkeit | Hosts und VMs: 300 Hosts, bis zu 10.000 VMs Datastores: 600 NFS, bis zu 50 VMFS, bis zu 250 VVols: Bis zu 14.000 | Hosts und VMs: 600 Hosts VVols: Bis zu 140.000 

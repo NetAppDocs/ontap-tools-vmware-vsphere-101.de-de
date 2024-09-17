@@ -6,5 +6,5 @@ entries:
   url: "/release-notes/release-notes.html"
 - title: Neuerungen bei ONTAP Tools für VMware vSphere 10.1
   url: "/release-notes/whats-new-otv-101.html"
-- title: Vergleich der Funktionen von OTV 9 und OTV 10
-  url: "/release-notes/otv-9-otv10-feature-comparison.html"
+- title: Vergleich der Funktionen der ONTAP Tools 9 und ONTAP Tools 10
+  url: "/release-notes/ontap-tools-9-ontap-tools-10-feature-comparison.html"
