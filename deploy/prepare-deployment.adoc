@@ -52,4 +52,5 @@ Im Folgenden finden Sie ONTAP Tools für VMware vSphere Anforderungen, bevor Sie
 .. IPv6-Gateway (optional)
 
 
+. Bevor Sie die ONTAP-Tools für VMware vSphere 10.1 in der nicht-HA-erweiterten und HA-Konfiguration installieren, lesen Sie den KB-Artikel: https://kb.netapp.com/on-prem/ontap/da/NAS/NAS-KBs/pre-requisites_for_installing_OTV_10.1_and_10.2_in_NonHA_Advanced_and_HA["Voraussetzungen für die nicht-HA Advanced- und HA-Konfiguration"].
 
