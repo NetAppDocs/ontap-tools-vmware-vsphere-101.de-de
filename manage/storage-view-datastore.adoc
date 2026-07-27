@@ -15,6 +15,7 @@ Die Ansicht „ONTAP Storage“ unter „Configure“ der ONTAP-Tools für VMwar
 
 
 
+[[ontap-storage-views-for-nfs-datastores]]
 == ONTAP-Speicheransichten für NFS-Datastores
 
 .Schritte
@@ -30,6 +31,7 @@ Die Ansicht „ONTAP Storage“ unter „Configure“ der ONTAP-Tools für VMwar
 
 
 
+[[ontap-storage-views-for-vmfs-datastores]]
 == ONTAP-Speicheransichten für VMFS-Datastores
 
 .Schritte
@@ -45,6 +47,7 @@ Die Ansicht „ONTAP Storage“ unter „Configure“ der ONTAP-Tools für VMwar
 
 
 
+[[ontap-storage-views-for-vvols-datastores]]
 == ONTAP Storage-Ansichten für VVols Datastores
 
 .Schritte

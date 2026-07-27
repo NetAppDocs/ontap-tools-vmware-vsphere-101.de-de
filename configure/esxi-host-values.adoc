@@ -17,6 +17,7 @@ Auf einem ESXi-Host können Sie die folgenden Werte festlegen:
 
 
 
+[[hbacna-adapter-settings]]
 == HBA/CNA-Adaptereinstellungen
 
 Legt die empfohlenen Einstellungen für das HBA-Zeitlimit für NetApp-Speichersysteme fest.
@@ -41,6 +42,7 @@ Standardwert verwenden.
 
 
 
+[[mpio-settings]]
 == MPIO-Einstellungen
 
 MPIO-Einstellungen definieren bevorzugte Pfade für NetApp-Speichersysteme. Die MPIO-Einstellungen legen fest, welche der verfügbaren Pfade optimiert sind (im Gegensatz zu nicht optimierten Pfaden, die das Verbindungskabel durchlaufen), und sie legen den bevorzugten Pfad zu einem dieser Pfade fest.
@@ -49,6 +51,7 @@ In hochperformanten Umgebungen oder wenn Sie die Performance mit einem einzelnen
 
 
 
+[[nfs-settings]]
 == NFS-Einstellungen
 
 * *Net.TcpipHeapSize*

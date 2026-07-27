@@ -25,6 +25,7 @@ NOTE: Als bestehender Benutzer müssen Sie das OVA-Backup von Ihrer aktuellen Ve
 
 
 
+[[common-migration-steps]]
 == Allgemeine Migrationsschritte
 
 . Implementieren Sie OVA für ONTAP Tools für VMware vSphere 10.1.
@@ -35,6 +36,7 @@ NOTE: Als bestehender Benutzer müssen Sie das OVA-Backup von Ihrer aktuellen Ve
 
 
 
+[[sra-migration-steps]]
 == SRA-Migrationsschritte
 
 *Bevor Sie beginnen*
@@ -61,6 +63,7 @@ Führen Sie diese Schritte sowohl an Sicherungs- als auch an Recovery-Standorten
 
 
 
+[[vasa-provider-migration-steps]]
 == Migrationsschritte für VASA-Provider
 
 . Aktivieren Sie Derby-PORT 1527 auf den vorhandenen ONTAP-Tools für VMware vSphere. Um den Port zu aktivieren, melden Sie sich bei CLI mit root user an und führen Sie den folgenden Befehl aus:

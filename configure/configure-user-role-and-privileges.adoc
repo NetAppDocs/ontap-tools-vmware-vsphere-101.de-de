@@ -51,6 +51,7 @@ NOTE: Beim Deinstallationsvorgang werden die Rollen des ONTAP-Tools nicht entfer
 
 
 
+[[svm-aggregate-mapping-requirements]]
 == Anforderungen für die SVM-Aggregatzuordnung
 
 Um SVM-Benutzeranmeldeinformationen für die Bereitstellung von Datastores zu verwenden, erstellt das interne ONTAP-Tool für VMware vSphere Volumes auf dem Aggregat, das in der POST-API für Datastores angegeben ist. Die ONTAP ermöglicht nicht die Erstellung von Volumes auf Aggregaten ohne Zuweisung auf einer SVM mit SVM-Benutzeranmeldeinformationen. Um das zu lösen, müssen Sie die SVMs wie hier beschrieben mit den Aggregaten zuordnen. Dazu verwenden Sie entweder die ONTAP REST-API oder die CLI.
@@ -69,6 +70,7 @@ sti115_vsim_ucs630f_aggr1 vserver show-aggregates                               
 ----
 
 
+[[create-ontap-user-and-role-manually]]
 == Erstellen Sie ONTAP-Benutzer und -Rolle manuell
 
 Befolgen Sie die Anweisungen in diesem Abschnitt, um den Benutzer und die Rollen manuell zu erstellen, ohne die JSON-Datei zu verwenden.
@@ -100,6 +102,7 @@ Fügen Sie den *REST API Path* und den entsprechenden Zugriff aus dem Drop-Down-
 
 
 
+[[list-of-minimum-privileges-required-for-non-admin-global-scoped-cluster-user]]
 == Liste der Mindestberechtigungen, die für einen nicht-Administrator-Cluster mit globalem Umfang erforderlich sind
 
 In diesem Abschnitt werden die Mindestberechtigungen aufgeführt, die für Benutzer mit globalem Clusterbereich, die ohne Verwendung der JSON-Datei des Benutzers erstellt wurden, erforderlich sind. Wenn Sie einen Cluster mit lokalem Umfang hinzufügen, empfehlen wir, zum Erstellen der Benutzer die JSON-Datei zu verwenden, da für ONTAP Tools für VMware vSphere mehr als nur die Leseberechtigungen für das Provisioning auf ONTAP erforderlich sind.

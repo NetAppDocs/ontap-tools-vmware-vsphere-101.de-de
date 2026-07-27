@@ -15,6 +15,7 @@ Beachten Sie einige Überlegungen bei der Migration vorhandener Virtual Machines
 
 
 
+[[migrate-protected-virtual-machines]]
 == Migrieren Sie geschützte Virtual Machines
 
 Sie können die geschützten virtuellen Maschinen migrieren in:
@@ -28,6 +29,7 @@ Wenn die Virtual Machine in ein anderes FlexVol Volume migriert wird, wird auch 
 
 
 
+[[clone-protected-virtual-machines]]
 == Klonen geschützter Virtual Machines
 
 Sie können geschützte Virtual Machines folgendermaßen klonen:
@@ -52,6 +54,7 @@ Der Klon einer geschützten Virtual Machine wird unterstützt.
 
 
 
+[[virtual-machine-snapshots]]
 == Snapshots Von Virtual Machines
 
 Derzeit werden nur Snapshots virtueller Maschinen ohne Speicher unterstützt. Wenn auf einer virtuellen Maschine Snapshot mit Arbeitsspeicher vorhanden ist, wird die virtuelle Maschine nicht als Schutz betrachtet.

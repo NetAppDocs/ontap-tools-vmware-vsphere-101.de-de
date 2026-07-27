@@ -15,6 +15,7 @@ Sie sollten die Speichersysteme einrichten, bevor Sie Storage Replication Adapte
 
 
 
+[[configure-sra-for-san-environments]]
 == Konfiguration von SRA für SAN-Umgebungen
 
 *Was Sie brauchen*
@@ -46,6 +47,7 @@ Dazu müssen Sie entweder überprüfen, ob auf den ESXi Hosts lokale LUNs auf de
 
 
 
+[[configure-sra-for-nas-environments]]
 == Konfiguration von SRA für NAS-Umgebungen
 
 *Was Sie brauchen*

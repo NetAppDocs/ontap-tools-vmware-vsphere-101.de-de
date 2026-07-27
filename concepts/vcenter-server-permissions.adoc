@@ -36,6 +36,7 @@ image:../media/permission-updated-graphic.gif["Abbildung der Berechtigungskompon
 
 
 
+[[privileges]]
 == Berechtigungen
 
 ONTAP Tools für VMware vSphere beinhalten zwei Arten von Berechtigungen:
@@ -59,12 +60,14 @@ Wenn Sie die Berechtigungen innerhalb einer Berechtigung ändern, sollte sich de
 
 
 
+[[vsphere-objects]]
 == VSphere Objekte
 
 Berechtigungen werden mit vSphere Objekten verknüpft, z. B. vCenter Server, ESXi Hosts, Virtual Machines, Datastores, Datacenter, Und Ordner. Sie können jedem vSphere-Objekt Berechtigungen zuweisen. Auf Grundlage der Berechtigung, die einem vSphere-Objekt zugewiesen ist, bestimmt der vCenter Server, wer welche Aufgaben auf dem Objekt ausführen kann. Für ONTAP-Tools für VMware vSphere-spezifische Aufgaben werden Berechtigungen nur auf der Root-Ordnerebene (vCenter Server) und nicht auf einer anderen Einheit zugewiesen und validiert. Mit Ausnahme des VAAI-Plug-in-Betriebs, wenn Berechtigungen für den betreffenden ESXi-Host validiert werden.
 
 
 
+[[users-and-groups]]
 == Benutzer und Gruppen
 
 Sie können Active Directory (oder den lokalen vCenter Server-Rechner) verwenden, um Benutzer und Benutzergruppen einzurichten. Sie können dann vCenter Server-Berechtigungen verwenden, um diesen Benutzern oder Gruppen Zugriff zu gewähren, damit sie spezifische ONTAP-Tools für VMware vSphere-Aufgaben ausführen können.

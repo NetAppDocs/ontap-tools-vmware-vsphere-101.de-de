@@ -15,6 +15,7 @@ Sie sollten die Storage-Timeout-Intervalle gemäß den empfohlenen Einstellungen
 
 
 
+[[storage-provider-settings]]
 == Einstellungen für Speicheranbieter
 
 Sie sollten für eine skalierte Umgebung die folgenden Zeitüberschreitungswerte für SRM einstellen:
@@ -60,6 +61,7 @@ https://docs.vmware.com/en/Site-Recovery-Manager/8.7/com.vmware.srm.admin.doc/GU
 
 
 
+[[storage-settings]]
 == Speichereinstellungen
 
 Wenn Sie eine Zeitüberschreitung drücken, erhöhen Sie die Werte von `storage.commandTimeout` und `storage.maxConcurrentCommandCnt` auf einen höheren Wert.

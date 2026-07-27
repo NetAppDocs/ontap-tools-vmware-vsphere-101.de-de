@@ -15,6 +15,7 @@ Vor der Implementierung von ONTAP Tools für VMware vSphere sollten Sie sich der
 
 
 
+[[preparing-for-deployment]]
 == Bereitstellung wird vorbereitet
 
 Im Folgenden finden Sie ONTAP Tools für VMware vSphere Anforderungen, bevor Sie mit der Implementierung fortfahren:

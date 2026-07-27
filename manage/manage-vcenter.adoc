@@ -15,6 +15,7 @@ VCenter Server sind zentrale Management-Plattformen, mit denen Sie Hosts, Virtua
 
 
 
+[[associate-or-dissociate-storage-backends-with-vcenter-server-instance]]
 == Verknüpfen oder trennen Sie Storage-Back-Ends mit vCenter Server-Instanz
 
 Auf der Listingseite des vCenter-Servers wird die zugehörige Anzahl von Speicher-Back-Ends angezeigt. Jede vCenter Server-Instanz hat die Möglichkeit, ein Storage-Back-End zuzuordnen oder zu deaktivieren. Diese Aufgabe hilft Ihnen, eine Zuordnung zwischen dem Storage-Backend und der eingebetgenen vCenter Server-Instanz global zu erstellen.
@@ -30,6 +31,7 @@ Auf der Listingseite des vCenter-Servers wird die zugehörige Anzahl von Speiche
 
 
 
+[[modify-vcenter-server-instance]]
 == VCenter Server-Instanz ändern
 
 Führen Sie die folgenden Schritte aus, um die vCenter Server-Instanzen zu ändern.
@@ -43,6 +45,7 @@ Führen Sie die folgenden Schritte aus, um die vCenter Server-Instanzen zu ände
 
 
 
+[[remove-vcenter-server-instance]]
 == Entfernen Sie die vCenter Server-Instanz
 
 Sie müssen alle Speicher-Back-Ends entfernen, die mit dem vCenter Server verbunden sind, bevor Sie ihn entfernen.

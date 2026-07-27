@@ -17,6 +17,7 @@ Nach Abschluss der Implementierung werden die ONTAP Tools für VMware vSphere un
 
 
 
+[[content-library]]
 == Content Library
 
 Eine Content-Bibliothek in VMware ist ein Container-Objekt, das VM-Vorlagen, vApp-Vorlagen und andere Dateitypen speichert. Die Bereitstellung mit Inhaltsbibliothek bietet Ihnen eine nahtlose Erfahrung, da sie nicht von der Netzwerkkonnektivität abhängt.

@@ -15,6 +15,7 @@ Storage-Back-Ends sind Systeme, die die ESXi Hosts zum Speichern von Daten verwe
 
 
 
+[[discover-storage]]
 == Storage erkennen
 
 Sie können die Erkennung eines Storage-Back-End nach Bedarf ausführen, ohne auf eine geplante Erkennung warten zu müssen, um die Speicherdetails zu aktualisieren.
@@ -32,6 +33,7 @@ Sie können den Fortschritt im Fenster Letzte Aufgaben verfolgen.
 
 
 
+[[modify-storage-backends]]
 == Speicherbackends ändern
 
 Befolgen Sie die Schritte in diesem Abschnitt, um ein Speicher-Back-End zu ändern.
@@ -54,6 +56,7 @@ Sie können den Änderungsvorgang für globale ONTAP-Cluster mithilfe des ONTAP 
 
 
 
+[[remove-storage-backends]]
 == Entfernen Sie die Speicher-Back-Ends
 
 Sie müssen alle mit dem Speicher-Back-End verbundenen Datenspeicher löschen, bevor Sie das Speicher-Back-End entfernen. Gehen Sie wie folgt vor, um ein Speicher-Back-End zu entfernen.
@@ -75,6 +78,7 @@ Sie können den Vorgang zum Entfernen globaler ONTAP-Cluster mit dem ONTAP-Tools
 
 
 
+[[drill-down-view-of-storage-backend]]
 == Drilldown-Ansicht des Storage-Back-End
 
 Auf der Storage-Back-End-Seite werden alle Storage-Back-Ends aufgeführt. Sie können Vorgänge für die Speicher-Back-Ends, die Sie hinzugefügt haben, und nicht für die einzelnen untergeordneten Elemente des Clusters ausführen.

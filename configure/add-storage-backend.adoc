@@ -22,6 +22,7 @@ NOTE: Wenn Sie mithilfe der vSphere Client-UI ein Storage-Back-End hinzufügen, 
 
 
 
+[[add-storage-backend-using-ontap-tools-manager]]
 == Fügen Sie mithilfe des ONTAP Tools Managers das Storage-Back-End hinzu
 
 
@@ -42,6 +43,7 @@ NOTE: IPV4- und IPV6-Management-LIFs werden unterstützt. Auch die benutzerbasie
 
 
 
+[[add-storage-backend-using-vsphere-client-ui]]
 == Storage-Back-End mithilfe der vSphere Client-UI hinzufügen:
 
 . Melden Sie sich mit beim vSphere-Client an `\https://vcenterip/ui`

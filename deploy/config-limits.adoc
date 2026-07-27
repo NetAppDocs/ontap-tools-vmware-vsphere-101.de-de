@@ -37,6 +37,7 @@ Weitere Informationen zur Größenbestimmung des Host-Systems pro Knoten finden 
 
 
 
+[[ontap-tools-for-vmware-vsphere-storage-replication-adapter-sra]]
 == ONTAP Tools für VMware vSphere – Storage Replication Adapter (SRA)
 
 Die folgende Tabelle zeigt die unterstützten Zahlen pro SRM-Instanz mit ONTAP Tools für VMware vSphere.

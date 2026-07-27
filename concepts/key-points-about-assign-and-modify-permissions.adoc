@@ -15,6 +15,7 @@ Bei der Arbeit mit vCenter Server-Berechtigungen gibt es einige wichtige Punkte,
 
 
 
+[[assigning-permissions]]
 == Berechtigungen werden zugewiesen
 
 Sie müssen nur vCenter Server-Berechtigungen einrichten, wenn Sie den Zugriff auf vSphere-Objekte und -Aufgaben einschränken möchten. Andernfalls können Sie sich als Administrator anmelden. Mit dieser Anmeldung können Sie automatisch auf alle vSphere Objekte zugreifen.
@@ -30,6 +31,7 @@ TIP: Sofern die Sicherheitsrichtlinien Ihres Unternehmens keine restriktiveren B
 
 
 
+[[permissions-and-non-vsphere-objects]]
 == Berechtigungen und nicht vSphere Objekte
 
 Die von Ihnen erstellte Berechtigung wird auf ein nicht-vSphere-Objekt angewendet. Beispielsweise ist ein Storage-System kein vSphere-Objekt. Wenn sich eine Berechtigung auf ein Speichersystem bezieht, sollten Sie die Berechtigung, die diese Berechtigung enthält, ONTAP-Tools für das VMware vSphere-Stammobjekt zuweisen, da es kein vSphere-Objekt gibt, dem Sie es zuweisen können.
@@ -38,6 +40,7 @@ Beispielsweise sollten alle Berechtigungen, die eine Berechtigung wie ONTAP Tool
 
 
 
+[[modifying-permissions]]
 == Ändern von Berechtigungen
 
 Sie können jederzeit eine Berechtigung ändern.

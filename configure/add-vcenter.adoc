@@ -15,6 +15,7 @@ VCenter Server stellt die zentrale Managementplattform bereit, mit der Sie Hosts
 
 
 
+[[add-a-vcenter-server-instance]]
 == Fügen Sie eine vCenter Server-Instanz hinzu
 
 *Über diese Aufgabe*
@@ -38,6 +39,7 @@ Wenn Sie ONTAP Tools eine vCenter Server-Instanz hinzufügen, werden die folgend
 
 
 
+[[register-ontap-tools-for-vmware-vsphere-plug-in-with-vcenter-server-instance]]
 == Registrieren Sie ONTAP-Tools für das VMware vSphere Plug-in mit vCenter Server-Instanz
 
 Wenn Sie eine vCenter Server-Instanz hinzufügen, werden ONTAP-Tools für VMware vSphere-Plug-in automatisch als Remote-Plug-in für vCenter Server registriert. Das Plug-in ist auf den vSphere-Benutzeroberflächen-Shortcuts sichtbar.
@@ -46,6 +48,7 @@ Das Plug-in wird mit einem Schlüssel _com.netapp.otv_ für die vCenter Server I
 
 
 
+[[unregister-ontap-tools-for-vmware-vsphere-plug-in]]
 == Heben Sie die Registrierung von ONTAP Tools für das VMware vSphere Plug-in auf
 
 Sie können die ONTAP-Tools für das VMware vSphere Plug-in mithilfe der folgenden Schritte von einer vCenter Server-Instanz abmelden.
